@@ -9,9 +9,22 @@
 }
 
 .container{
-    width: calc( 100% - 330px );
-    margin: 0 auto;
+  /** width: calc( 100% - 330px ); **/
+  padding: 0 24px;
+  margin: 0 auto;
 }
+
+
+
+
+@media screen and (min-width:0) and (max-width: 768px) {
+  .container {
+        padding-left: 20px;
+        padding-right: 20px;
+  }
+}
+
+
 
 .row{
      display:flex;
@@ -119,16 +132,16 @@ img {
  
 
 /* 
- بعد المحاضرة تكملة المشروع
+ بعد المحاضرة تكملة المشروع 
 
 */
 
 .img_flat {
-  width:calc(100% - 5px);
+/**  width:calc(100% - 5px); **/
   max-width: 100%;
   position: relative;
   overflow: hidden;
-
+  padding: 15px;
 }
 
 
@@ -139,14 +152,15 @@ img {
   height: 640px; 
   z-index: 10;
   bottom: 20px;
-  top: 15px;
+  top: 20px;
 }
 
 @media screen and (min-width:0) and (max-width:1360px) {
 
       .img_flat .overlay {
-      
-        display:none;
+        position: static;
+        width: 100%;
+        padding: 0;
       }     
 }
 
@@ -164,23 +178,35 @@ img {
   flex-direction: column;
 }
 
+@media screen and (min-width:1362px) and (max-width:1778px) {
+  .img_flat .overlay-content .Icon{
+  position: absolute;
+  top: 25%;            
+  left: 35%;  
+  bottom: 25%;        
+  width: 80px;
+  height: auto;
+  transform: translate(-90%, -90%); 
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  }
+}
 
-@media screen and (min-width:1360px) and (max-width:1760px) {
+@media screen and (min-width:0) and (max-width:1360px) {
 
     .img_flat .overlay-content .Icon{
         position: absolute;
-        top: 25%;            
-        left: 29%;  
-        bottom: 25%;        
-        width: 65px;
+        top: 55%;            
+        left: 50%;  
+        width: 95px;
         height: auto;
         transform: translate(-40%, -40%); 
         z-index: 20;
         display: flex;
         flex-direction: column;
     }
-  
-}
+  }
 
 .img_flat .overlay-content .text1 {
   position: absolute;
@@ -197,24 +223,23 @@ img {
 }
 
 
-@media screen and (min-width:1360px) and (max-width:1760px) {
+@media screen and (min-width:1362px) and (max-width:1778px) {
 
     .img_flat .overlay-content .text1 {
 
       position: absolute;
-  top: calc(30% + 50px);  
-  left: 30%;
-  font-size: 18.5px;
-  transform: translateX(-50%);  
-  z-index: 20;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-
+      top: calc(30% + 50px);  
+      left: 38%;
+      font-size: 20px;
+      transform: translateX(-90%);  
+      z-index: 20;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
 }
-}
+} 
 
 @media screen and (min-width:0) and (max-width:1360px){
   .img_flat .overlay-content .text1{
@@ -257,14 +282,15 @@ img {
 .img_flat .shop-text{
   position: absolute;
   bottom: 35%; 
-  left: 30%;
-  background-color: white;
+  left: 31%;
   display: flex;
-  font-size: 150%;
   transform: translateX(-150%);
   z-index: 20;
 }
-
+.img_flat .shop-text button{
+  width: 150px;
+  font-size: large;
+}
 @media screen and (min-width:1360px) and (max-width:1760px) {
     .img_flat .shop-text{
       position: absolute;
