@@ -4,12 +4,36 @@
     box-sizing: border-box;
 }
 
+:root{
+  --primaryColor: #3A3845;
+  --PrimaryFont:Inter;
+  --spacer:4px;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: "EB Garamond", serif;
+}
+
+body{
+  font-family: var(--primaryFont);
+}
 .header{
     padding: 21.84px 0;
 }
 
+.header a{
+  text-decoration: none;
+  font-size: 22px;
+   color: var(--primaryColor);
+   transition-property: color;
+   transition-duration: .8s;
+}
+
+.header a:hover{
+  color: #2388ff
+}
 .container{
-  /** width: calc( 100% - 330px ); **/
+/**  width: calc( 100% - 330px ); **/
   padding: 0 24px;
   margin: 0 auto;
 }
@@ -56,6 +80,8 @@ img {
     list-style-type: none;
 }
 
+
+
 @media screen and (min-width:0) and (max-width:1000px){
 
       .list {
@@ -83,13 +109,18 @@ img {
     gap:30px ;
     padding-top: 40px;
     padding-bottom: 40px;
+   
 }
 
 .Colleation{
     width: calc( (100% - 90px) / 4);
     text-align: center;
-    
+   /**  display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr)); **/
 }
+
+
+
 
 @media screen and (min-width:0) and (max-width:400px) {
 
@@ -115,6 +146,8 @@ img {
       }
 }
 
+/** الكود الى فوق بقدر اوقفه وازبطه ب grid **/
+
 .Colleation img{
     width: 100%;
 }
@@ -137,7 +170,7 @@ img {
 */
 
 .img_flat {
-/**  width:calc(100% - 5px); **/
+  width:calc(100% - 5px); 
   max-width: 100%;
   position: relative;
   overflow: hidden;
@@ -221,7 +254,25 @@ img {
   justify-content: center;
   align-content: center;
 }
+/** هاي الميديا بس تنزل تحت الجملة **/
+@media screen and (min-width:0) and (max-width:1360px){
+  .img_flat .overlay-content .text1{
 
+  position: absolute;
+  top: calc(30% + 50px);  
+  left: 65%;
+  bottom: 65px;
+  font-size: 25px;
+  transform: translateX(-90%);  
+  z-index: 20;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  }
+}
+  /** وهاي الميديا بس تزيح للجهة التانية من الشاشة**/
 
 @media screen and (min-width:1362px) and (max-width:1778px) {
 
@@ -241,11 +292,7 @@ img {
 }
 } 
 
-@media screen and (min-width:0) and (max-width:1360px){
-  .img_flat .overlay-content .text1{
-    display: none;
-  }
-}
+
 
 
 .img_flat .overlay-content .text2 {
@@ -275,7 +322,19 @@ img {
 
 @media screen and (min-width:0) and (max-width:1360px){
   .img_flat .overlay-content .text2{
-    display: none;
+      position: absolute;
+  top: calc(30% + 50px);  
+  left: 51%;
+  bottom: -15%;
+  font-size: 40px;
+  transform: translateX(-40%);  
+  z-index: 20;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
   }
 }
 
@@ -306,7 +365,12 @@ img {
 }
 @media screen and (min-width:0) and (max-width:1360px){
   .img_flat .shop-text{
-    display: none;
+  position: absolute;
+  bottom: 15%; 
+  left: 65%;
+  display: flex;
+  transform: translateX(-150%);
+  z-index: 20;
   }
 }
 
@@ -381,4 +445,154 @@ section2 palents
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media screen and (min-width:0) and (max-width:1360px){
+  .Colleation_section2 .box-text{
+    position: absolute;
+   width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #f7f6f5; 
+  }
+}
+@media screen and (min-width:0) and (max-width:1360px) {
+
+  .Colleation_section2 .box-image{
+   position: static;
+        width: 100%;
+        padding: 0;
+
+  }
+
+  
+}
+
+@media screen and (max-width: 1360px) {
+
+ 
+
+  .row2 {
+    flex-direction: column;
+    height: auto; /* الحاوية تكبر حسب المحتوى */
+  }
+
+  .box-text,
+  .box-image {
+    width: 100%;
+    position: static;
+  }
+
+  .box-image img {
+    width: 100%;
+    height: auto;      /* ← أهم سطر */
+    object-fit: contain; /* ← خلي الصورة كلها تظهر بدون قص */
+  }
+
+
+}
+
+
+/**  8 تطبيق محاضرة**/
+
+.best_sellers .row{
+  gap: 30px;
+}
+
+.best_sellers{
+  text-align: center;
+  padding: 80px 0;
+}
+
+.best_sellers .item{
+  text-align: left;
+  width: calc( (100% - (3*30px) ) / 4 );
+}
+
+.best_sellers .item-content{
+    margin-top: 24px;
+}
+
+.best_sellers h2{
+  font-size: 30px;
+  font-weight:700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+}
+
+.best_sellers h3{
+  font-size: 20px;
+  font-weight:500;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.best_sellers .price{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.best_sellers .description{
+  color: #807f86;
+  width: 80%;
+  line-height: 22px;
+  margin-top: 24px;
+  margin-bottom: 34px;
+}
+
+.best_sellers .add-to-cart{
+    padding: 15px 81px;
+    background-color: #fff;
+    border: 1px solid #000;
+    letter-spacing: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: backgroundcolor 3s,color 1.3s;
+}
+
+.item:hover .add-to-cart{
+  background-color: #2388ff;
+  color: #ffffff;
+}
+
+@media screen and (min-width:0) and (max-width:400px) {
+
+  .best_sellers .item{
+    width: 100%;
+  }
+
+ 
+  
+}
+
+
+@media screen and (min-width:401px) and (max-width:700px) {
+
+  .best_sellers .item{
+    width: calc( (100% - (1*30px) ) / 2 );
+  }
+
+  .best_sellers .add-to-cart{
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+  
+}
+
+
+@media screen and (min-width:701px) and (max-width:960px) {
+
+  .best_sellers .item{
+    width: calc( (100% - (2*30px) ) / 3 );
+  }
+
+  .best_sellers .add-to-cart{
+    padding: 14px 20px;
+    font-size: 17px;
+  }
+  
 }
