@@ -70,6 +70,7 @@ body{
           }       
  }
 
+
 img {
   width: 100%;
 }
@@ -96,6 +97,11 @@ img {
     gap: 24px;
 }
 
+.icons{
+  cursor: pointer;
+}
+
+
 @media screen and (min-width:0) and (max-width:1000px) {
 
   .icons{
@@ -104,6 +110,7 @@ img {
 
 }
 
+ 
 .Colleation_section{
     
     gap:30px ;
@@ -130,7 +137,7 @@ img {
           }
 
           .Colleation{
-            width: 500%;
+            width: 100%;
           }
 }
 
@@ -174,7 +181,6 @@ img {
   max-width: 100%;
   position: relative;
   overflow: hidden;
-  padding: 15px;
 }
 
 
@@ -225,6 +231,20 @@ img {
   flex-direction: column;
   }
 }
+
+@media screen  and (min-width:320px) and (max-width:604px) { /* تعديل icon وقت ماصغرها ل604*/
+
+  .img_flat .overlay-content .Icon{
+    position: absolute;
+    background-color:aqua;
+    top: 40px;
+    bottom: -90px;
+    width: 200px;
+    z-index: 5;
+    display:flex;
+  }
+  
+}  /*حل المشكل الي فوووق */
 
 @media screen and (min-width:0) and (max-width:1360px) {
 
@@ -285,6 +305,7 @@ img {
       transform: translateX(-90%);  
       z-index: 20;
       color: white;
+      background-color: red;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -386,27 +407,65 @@ section2 palents
   width: 100%;
 }
 
-.container2 {
+.container2  .box-text{
   max-width: 1100px;
   margin: auto;
-}
-
-.row2 {
-  display: flex;              /* يخلي divs جنب بعض */
-  height: 350px;              /* نفس ارتفاع الكارد */
-  background-color: #fff;
-}
-
-.box-text {
-  width: 50%;
-  padding: 50px;
+  width: 100%;
+  padding: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  flex: 1 1 10%;
+  box-sizing: border-box;
   background-color: #f7f6f5;
-
 }
+
+
+.row2 {
+  display: flex;              /* يخلي divs جنب بعض */
+  flex-wrap: wrap;
+  gap: 0;
+  background-color: #fff;
+}
+
+@media screen and (min-width:1100px) and (max-width:1360px) {
+  .container2 .row2 {
+    flex-direction: column;
+  }
+  
+  .container2 .box-image,
+  .container2 .box-text {
+    flex: unset;
+    width: 100%;
+    max-width: 100%;
+    padding: 5%;
+  }
+}
+
+@media screen and (min-width:438px) and (max-width:774px) {
+  .row2 {
+    flex-direction: column;
+  }
+
+  .container2 .box-image {
+    width: 100%;
+    min-height: 300px;  /* ⬅️ هاد بيضمن الصورة تبين */
+    flex: unset;
+  }
+
+  .container2 .box-image img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .container2 .box-text {
+    width: 100%;
+    flex: unset;
+    padding: 5%;
+  }
+}
+
 
 .box-text h2 {
   font-size: 28px;
@@ -428,10 +487,11 @@ section2 palents
   text-decoration: none;
   color: black;
   font-weight: bold;
-  border-bottom: 1px solid black;
+  border-bottom: 5px solid black;
   width: fit-content;
   margin: 0 auto;
   display: block;
+  cursor:pointer;
 }
 
 .box-image {
@@ -439,6 +499,7 @@ section2 palents
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
 }
 
 .box-image img {
@@ -551,6 +612,7 @@ section2 palents
     letter-spacing: 4px;
     font-size: 14px;
     font-weight: 600;
+      cursor: pointer;
     transition: backgroundcolor 3s,color 1.3s;
 }
 
